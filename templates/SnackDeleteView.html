@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content%}
+
+<form method='post'>
+    {% csrf_token %}
+    <h1>Delete {{snack.title}}?</h1>
+
+    <input type='submit' value='yes' />
+    <button><a href="{% url 'SnackListView' %}">No</a></button>
+
+</form>
+
+{% endblock content%}

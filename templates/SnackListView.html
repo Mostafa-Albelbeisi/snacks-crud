@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content%}
+
+<header>
+    <h1>Snack List</h1>
+</header>
+<button><a href="{% url 'SnackCreateView' %}">Create</a></button>
+
+{% for snack in object_list %}  
+
+<h3>List:</h3>
+<h3> {{snack.title}}</h3>
+<button><a href="{% url 'SnackDetailView' snack.pk %}">More details </a></button>
+<button><a href="{% url 'SnackUpdateView' snack.pk %}">Update</a></button>
+<button><a href="{% url 'SnackDeleteView' snack.pk %}">Delete</a></button>
+
+{% endfor %}
+{% endblock content%}
